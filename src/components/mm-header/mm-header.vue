@@ -94,7 +94,8 @@ export default {
     openDialog(key) {
       switch (key) {
         case 0:
-          this.$refs.loginDialog.show()
+          // this.$refs.loginDialog.show()
+          this.login()
           break
         case 1:
           this.$refs.loginDialog.hide()
@@ -117,9 +118,10 @@ export default {
     // 登录
     login() {
       if (this.uidValue === '') {
-        this.$mmToast('UID 不能为空')
-        this.openDialog(0)
-        return
+        // this.$mmToast('UID 不能为空')
+        // this.openDialog(0)
+        // return
+        this.uidValue = '381768682'
       }
       this.openDialog(3)
       this._getUserPlaylist(this.uidValue)
