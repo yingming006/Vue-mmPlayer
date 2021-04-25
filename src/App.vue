@@ -48,21 +48,6 @@ export default {
       this.setPlaylist({ list })
     })
 
-    // 设置title
-    let OriginTitile = document.title
-    let titleTime
-    document.addEventListener('visibilitychange', function() {
-      if (document.hidden) {
-        document.title = '死鬼去哪里了！'
-        clearTimeout(titleTime)
-      } else {
-        document.title = '(つェ⊂)咦!又好了!'
-        titleTime = setTimeout(function() {
-          document.title = OriginTitile
-        }, 2000)
-      }
-    })
-
     // 设置audio元素
     this.$nextTick(() => {
       this.setAudioele(this.$refs.mmPlayer)
